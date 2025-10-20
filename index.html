@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Horarios de Biblometros y Escuchaderos - Metro de Medellín</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Horarios para tu bienestar con el Metro de Medellín</h1>
+            <p>Selecciona entre Biblometros o Escuchaderos y haz clic en una estación.</p>
+        </div>
+
+        <aside class="panel">
+            <div class="mode-switch">
+                <button id="modeBiblio" class="mode-btn active">📚 Biblometros</button>
+                <button id="modeEscucha" class="mode-btn">🧠 Escuchaderos</button>
+            </div>
+            <div class="station-list" id="stationList"></div>
+        </aside>
+
+        <section class="info-details" id="infoDetails">
+            <h2>Información de Contacto y General</h2>
+            <div id="generalInfoContent">
+                <p>Selecciona un modo para ver la información general y el contacto para cada servicio.</p>
+            </div>
+        </section>
+
+        <main class="map">
+            <div class="track" id="track"></div>
+            <div class="train" id="train">
+                <img class="img_train" data-mobile-src="/img/metro_animado_2.webp" src="/img/metro_animado_1.webp"
+                    alt="Metro">
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
