@@ -78,7 +78,7 @@ function updateTrainImage() {
         }
     } else {
         // Vuelve a la imagen de escritorio
-        trainImage.src = '/img/metro_animado_1.webp';
+        trainImage.src = 'img/metro_animado_1.webp';
     }
 }
 
