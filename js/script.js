@@ -1,10 +1,176 @@
 const stations = [
-    { id: 'san-antonio', name: 'San Antonio', biblio: { available: true, horarios: [{ label: 'Lunes a viernes', hours: '8:00–8:00 p.m.' }], info: 'Ubicación: Acceso oriental. Para buscar información de los libros: Teléfono: 5109741' }, escucha: { available: true, horarios: [{ label: 'Martes', hours: '9:00–12:00 m.' }], info: 'Línea A. Horario presencial: Martes. Para asesoría virtual: Teléfono: 444 4448' } },
-    { id: 'itagui', name: 'Itagüí', biblio: { available: true, horarios: [{ label: 'Lunes a viernes', hours: '8:00–6:00 p.m.' }], info: 'Ubicación: Acceso sur. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.' }, escucha: { available: false } },
-    { id: 'niquia', name: 'Niquía', biblio: { available: true, horarios: [{ label: 'Lunes a viernes', hours: '8:00–6:00 p.m.' }], info: 'Ubicación: Acceso occidental. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.' }, escucha: { available: false } },
-    { id: 'santo-domingo', name: 'Santo Domingo', biblio: { available: true, horarios: [{ label: 'Lunes a viernes', hours: '9:00–6:00 p.m.' }], info: 'Ubicación: Hacia el Metrocable Línea L. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.' }, escucha: { available: true, horarios: [{ label: 'Martes y jueves', hours: '1:00–5:00 p.m.' }], info: 'Línea K. Horario presencial: Martes y jueves. Para asesoría virtual: Teléfono: 444 4448' } },
-    { id: 'el-pinal', name: 'El Pinal', biblio: { available: true, horarios: [{ label: 'Lunes a viernes', hours: '9:00–5:00 p.m.' }], info: 'Ubicación: Plazoleta inferior Metrocable Línea M. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.' }, escucha: { available: false } },
-    { id: 'acevedo', name: 'Acevedo', biblio: { available: true, horarios: [{ label: 'Lunes a viernes', hours: '8:00–8:00 p.m.' }], info: 'Ubicación: Plataforma Metrocable Línea P. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.' }, escucha: { available: true, horarios: [{ label: 'Miércoles', hours: '8:00–12:00 m.' }], info: 'Línea P. Horario presencial: Miércoles. Para asesoría virtual: Teléfono: 444 4448' } },
+    // ----------------------------------------------------
+    // ESTACIÓN: SAN ANTONIO (Tiene ambos servicios)
+    // ----------------------------------------------------
+    {
+        id: 'san-antonio',
+        name: 'San Antonio',
+        biblio: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' }
+            ],
+            info: 'Ubicación: Acceso oriental. Para buscar información de los libros: Teléfono: 5109741. Contacto general (Bibliotecas Comfama): (604) 2162900, opción 2.',
+            website: 'https://www.comfama.com/bibliotecas/' // 👈 Enlace añadido
+        },
+        escucha: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' },
+                { label: 'Sábados', hours: '9:00 a. m. – 12:00 m.' }
+            ],
+            info: 'Línea A. Para asesoría virtual: Teléfono: 444 4448.'
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: ITAGÜÍ (Solo tiene Biblometro)
+    // ----------------------------------------------------
+    {
+        id: 'itagui',
+        name: 'Itagüí',
+        biblio: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 6:00 p. m.' }
+            ],
+            info: 'Ubicación: Acceso sur. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.',
+            website: 'https://www.comfama.com/bibliotecas/' // 👈 Enlace añadido
+        },
+        escucha: {
+            available: false
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: NIQUÍA (Solo tiene Biblometro)
+    // ----------------------------------------------------
+    {
+        id: 'niquia',
+        name: 'Niquía',
+        biblio: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 6:00 p. m.' }
+            ],
+            info: 'Ubicación: Acceso occidental. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.',
+            website: 'https://www.comfama.com/bibliotecas/' // 👈 Enlace añadido
+        },
+        escucha: {
+            available: false
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: SANTO DOMINGO (Solo tiene Biblometro)
+    // ----------------------------------------------------
+    {
+        id: 'santo-domingo',
+        name: 'Santo Domingo',
+        biblio: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '9:00 a. m. – 5:00 p. m.' }
+            ],
+            info: 'Ubicación: Hacia el Metrocable Línea L. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.',
+            website: 'https://www.comfama.com/bibliotecas/' // 👈 Enlace añadido
+        },
+        escucha: {
+            available: false
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: EL PINAL (Solo tiene Biblometro)
+    // ----------------------------------------------------
+    {
+        id: 'el-pinal',
+        name: 'El Pinal',
+        biblio: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '9:00 a. m. – 5:00 p. m.' }
+            ],
+            info: 'Ubicación: Plazoleta inferior Metrocable Línea M. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.',
+            website: 'https://www.comfama.com/bibliotecas/' // 👈 Enlace añadido
+        },
+        escucha: {
+            available: false
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: ACEVEDO (Tiene ambos servicios)
+    // ----------------------------------------------------
+    {
+        id: 'acevedo',
+        name: 'Acevedo',
+        biblio: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' }
+            ],
+            info: 'Ubicación: Plataforma Metrocable Línea P. Para buscar información de los libros: Bibliotecas Comfama (central): (604) 2162900, opción 2.',
+            website: 'https://www.comfama.com/bibliotecas/' // 👈 Enlace añadido
+        },
+        escucha: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' },
+                { label: 'Sábados', hours: '9:00 a. m. – 12:00 m.' }
+            ],
+            info: 'Línea P. Para asesoría virtual: Teléfono: 444 4448.'
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: LA AURORA (Solo tiene Escuchadero)
+    // ----------------------------------------------------
+    {
+        id: 'la-aurora',
+        name: 'La Aurora',
+        biblio: {
+            available: false
+        },
+        escucha: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' },
+                { label: 'Sábados', hours: '9:00 a. m. – 12:00 m.' }
+            ],
+            info: 'Línea J. Para asesoría virtual: Teléfono: 444 4448.'
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: ORIENTE (Solo tiene Escuchadero)
+    // ----------------------------------------------------
+    {
+        id: 'oriente',
+        name: 'Oriente',
+        biblio: {
+            available: false
+        },
+        escucha: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' },
+                { label: 'Sábados', hours: '9:00 a. m. – 12:00 m.' }
+            ],
+            info: 'Línea T. Para asesoría virtual: Teléfono: 444 4448.'
+        }
+    },
+    // ----------------------------------------------------
+    // ESTACIÓN: SAN JAVIER (Solo tiene Escuchadero)
+    // ----------------------------------------------------
+    {
+        id: 'san-javier',
+        name: 'San Javier',
+        biblio: {
+            available: false
+        },
+        escucha: {
+            available: true,
+            horarios: [
+                { label: 'Lunes a viernes', hours: '8:00 a. m. – 8:00 p. m.' },
+                { label: 'Sábados', hours: '9:00 a. m. – 12:00 m.' }
+            ],
+            info: 'Línea J. Para asesoría virtual: Teléfono: 444 4448.'
+        }
+    }
 ];
 
 // --- Información General y Títulos ---
@@ -78,7 +244,7 @@ function updateTrainImage() {
         }
     } else {
         // Vuelve a la imagen de escritorio
-        trainImage.src = '/img/metro_animado_1.webp';
+        trainImage.src = 'img/metro_animado_1.webp';
     }
 }
 
@@ -95,10 +261,23 @@ function displayStationDetails(station) {
     // 2️⃣ Contenido
     let contentHTML = '';
 
+    // Añade el enlace del sitio web si estamos en modo Biblio
+    if (currentMode === 'biblio' && data.website) {
+        contentHTML += `
+            <p>
+                <a href="${data.website}" target="_blank" rel="noopener noreferrer" style="color: var(--verde); font-weight: 600;">
+                    🔗 Sitio web: Bibliotecas Comfama
+                </a>
+            </p>
+        `;
+    }
+
+    // Añade la información general (ubicación, teléfonos, etc.)
     if (data.info) {
         contentHTML += `<p>${data.info}</p>`;
     }
 
+    // Añade los horarios
     if (data.horarios && data.horarios.length > 0) {
         const schedules = data.horarios
             .map(h => `<li><strong>${h.label}:</strong> ${h.hours}</li>`)
